@@ -1,6 +1,6 @@
-# VoiceIntel Pro (Resumini)
+# Resume Intelligence Analysis Application
 
-Resumini is a powerful AI agent designed to help candidates optimize their resumes and an advanced implementation of "VoiceIntel Pro". It leverages Google's Gemini models (via `google-adk`), FastAPI, and a modern React frontend to analyze, summarize, score, and rewrite resumes.
+Resumini is a powerful Resume Intelligence Analysis Application designed to help candidates optimize their resumes. It leverages Google's Gemini models (via `google-adk`), FastAPI, and a modern React frontend to analyze, summarize, score, and rewrite resumes.
 
 ## Tech Stack
 

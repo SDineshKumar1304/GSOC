@@ -1,0 +1,14 @@
+[project]
+name = "gsoc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "faiss-cpu>=1.13.2",
+    "fastapi[standard]>=0.128.0",
+    "google-adk>=1.18.0",
+    "python-docx>=1.2.0",
+    "selenium>=4.39.0",
+    "sentence-transformers>=5.2.0",
+]

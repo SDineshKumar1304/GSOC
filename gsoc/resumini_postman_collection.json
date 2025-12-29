@@ -1,0 +1,224 @@
+{
+  "info": {
+    "_postman_id": "resumini-api-collection",
+    "name": "Resumini API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Resume (File)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/upload/file",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["upload", "file"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Resume (Text)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"text\": \"John Doe\\nSoftware Engineer\\nPython, FastAPI, React\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/upload/text",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["upload", "text"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze Summary",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"text\": \"John Doe\\nSoftware Engineer\\nPython, FastAPI, React\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/analyze/summary",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["analyze", "summary"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze ATS Score",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"resume_text\": \"John Doe\\nPython Developer\\nSkills: Python, Django, SQL\",\n    \"role\": \"Python Developer\",\n    \"job_description\": \"Looking for a Python Developer with Django and SQL experience.\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/analyze/ats",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["analyze", "ats"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Optimize Resume",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"request\": {\n        \"text\": \"John Doe\\nPython Developer\\nSkills: Python, Django, SQL\"\n    },\n    \"role\": \"Senior Python Developer\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/optimize",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["optimize"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chat RAG",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"query\": \"Does the candidate have experience with Docker?\",\n    \"top_k\": 3\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/chat",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["chat"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Job Search",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"role\": \"Python Developer\",\n    \"location\": \"San Francisco\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/jobs",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["jobs"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Latex Preview",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"request\": {\n        \"text\": \"John Doe\\nPython Developer\"\n    },\n    \"role\": \"Python Developer\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/preview/latex",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["preview", "latex"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,6 +1,12 @@
-# Resumini - AI Powered Resume Agent
+# VoiceIntel Pro (Resumini)
 
-Resumini is a powerful AI agent designed to help candidates optimize their resumes for Applicant Tracking Systems (ATS). It uses Google's Gemini models (via `google-adk`) to analyze, summarize, score, and rewrite resumes.
+Resumini is a powerful AI agent designed to help candidates optimize their resumes and an advanced implementation of "VoiceIntel Pro". It leverages Google's Gemini models (via `google-adk`), FastAPI, and a modern React frontend to analyze, summarize, score, and rewrite resumes.
+
+## Tech Stack
+
+- **Backend**: Python 3.10+, FastAPI, Google Vertex AI (Gemini), LangChain
+- **Frontend**: React, Vite, TailwindCSS, Lucide Icons
+- **Infrastructure**: Uvicorn, Docker (optional)
 
 ## Features
 
@@ -10,58 +16,85 @@ Resumini is a powerful AI agent designed to help candidates optimize their resum
 - **Professional Summary**: Generate concise, recruiter-friendly summaries.
 - **Resume Optimization**: Rewrite resume content to better align with a specific job role.
 - **Job Search**: Search for relevant jobs on LinkedIn (requires Chrome/Selenium).
-- **LaTeX Preview**: Generate a professional LaTeX/PDF version of the resume.
 
 ## Prerequisites
 
 - Python 3.10+
-- [Google Cloud Project](https://console.cloud.google.com/) with Vertex AI enabled (for `google-adk`).
-- `pdflatex` (optional, for PDF generation).
+- Node.js & npm (for Frontend)
+- [Google Cloud Project](https://console.cloud.google.com/) with Vertex AI enabled.
 
-## Installation
+## Installation & Setup
 
-1.  **Clone the repository**:
+Clone the repository:
 
-    ```bash
-    git clone <repository-url>
-    cd GSOC
-    ```
+```bash
+git clone <repository-url>
+cd GSOC
+```
 
-2.  **Install dependencies**:
-    Using `uv` (recommended):
-    ```bash
-    uv sync
-    ```
-    Or using `pip`:
-    ```bash
-    pip install -r requirements.txt
-    ```
+### 1. Backend Setup
 
-## Configuration
+Navigate to the backend directory:
 
-Ensure you have your Google Cloud credentials set up for `google-adk`. You may need to set environment variables or use `gcloud auth application-default login`.
+```bash
+cd backend
+```
 
-## Usage
+Install dependencies using `uv` (recommended) or `pip`:
 
-Start the FastAPI server:
+```bash
+# Using uv
+uv sync
+
+# Using pip
+pip install -r requirements.txt
+```
+
+**Configuration**:
+Ensure you have a `.env` file with your Google Cloud credentials (API keys) or set up Application Default Credentials.
+
+Start the Backend Server:
 
 ```bash
 uv run uvicorn app.main:app --reload
 ```
 
-The API will be available at `http://127.0.0.1:8000`.
+The API will run at `http://127.0.0.1:8000`.
 
-### API Documentation
+### 2. Frontend Setup
 
-- **Swagger UI**: Visit `http://127.0.0.1:8000/docs` for interactive API testing.
-- **Detailed Docs**: See [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
-- **Postman**: Import `resumini_postman_collection.json` into Postman.
+Navigate to the frontend directory:
+
+```bash
+cd ../frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the Development Server:
+
+```bash
+npm run dev
+```
+
+The Frontend will run at `http://localhost:5173` (default Vite port).
 
 ## Project Structure
 
-- `app/`: Core application logic.
-  - `main.py`: FastAPI entry point.
-  - `models.py`: Pydantic data models.
-  - `services/`: Agent logic and tools.
-- `tests/`: Test scripts.
-- `requirements.txt`: Python dependencies.
+- `backend/`
+  - `app/`: Core application logic (API, Services, Models).
+  - `tests/`: specific test scripts.
+  - `requirements.txt`: Python dependencies.
+- `frontend/`
+  - `src/`: React source code (Components, Pages).
+  - `vite.config.ts`: Vite configuration.
+  - `package.json`: Node dependencies.
+
+## API Documentation
+
+- **Swagger UI**: Visit `http://127.0.0.1:8000/docs`.
+- **Detailed Docs**: See [backend/API_DOCUMENTATION.md](backend/API_DOCUMENTATION.md).

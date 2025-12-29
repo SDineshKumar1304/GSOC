@@ -1,6 +1,10 @@
 import os
 import shutil
 import tempfile
+from dotenv import load_dotenv
+
+load_dotenv() # Load environment variables from .env file
+
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form, Body
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional

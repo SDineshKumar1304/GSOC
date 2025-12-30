@@ -98,3 +98,9 @@ The Frontend will run at `http://localhost:5173` (default Vite port).
 
 - **Swagger UI**: Visit `http://127.0.0.1:8000/docs`.
 - **Detailed Docs**: See [backend/API_DOCUMENTATION.md](backend/API_DOCUMENTATION.md).
+
+
+
+## To get a understanding of this project See the CLI VERSION OF THIS PROTOTYPE
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7390056237523959808?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>

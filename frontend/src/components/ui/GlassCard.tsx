@@ -27,7 +27,7 @@ export const GlassCard = ({ className, children, hoverEffect = false, ...props }
     >
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/40 to-transparent" />
-      <div className="relative z-10">
+      <div className="relative z-10 w-full h-full">
         {children}
       </div>
     </motion.div>

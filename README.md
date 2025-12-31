@@ -2,18 +2,30 @@
 
 Resumini is a powerful Resume Intelligence Analysis Application designed to help candidates optimize their resumes. It leverages Google's Gemini models (via `google-adk`), FastAPI, and a modern React frontend to analyze, summarize, score, and rewrite resumes.
 
+## Application Screenshots
+
+Please place the corresponding screenshots in `frontend/images/`:
+
+|      **Dashboard (Executive Summary)**      |       **ATS Analysis & Feedback**       |
+| :-----------------------------------------: | :-------------------------------------: |
+| ![Dashboard](frontend/images/dashboard.png) | ![ATS Scoring](frontend/images/ats.png) |
+
+|           **RAG Chat Agent**            |            **Resume Upload**             |
+| :-------------------------------------: | :--------------------------------------: |
+| ![Chat Agent](frontend/images/chat.png) | ![Home/Upload](frontend/images/home.png) |
+
 ## Tech Stack
 
 - **Backend**: Python 3.10+, FastAPI, Google Vertex AI (Gemini), LangChain
-- **Frontend**: React, Vite, TailwindCSS, Lucide Icons
+- **Frontend**: React, Vite, TailwindCSS, Lucide Icons, Framer Motion, React Markdown
 - **Infrastructure**: Uvicorn, Docker (optional)
 
 ## Features
 
-- **Resume Parsing**: Extract text from PDF, DOCX, and plain text files.
-- **RAG (Retrieval-Augmented Generation)**: Store resumes in memory and ask questions about them.
-- **ATS Analysis**: Get a heuristic score and AI-driven feedback on how well a resume matches a job description.
-- **Professional Summary**: Generate concise, recruiter-friendly summaries.
+- **resumini-parser**: Extract text from PDF, DOCX, and plain text files.
+- **RAG Agent (Interactive Chat)**: Chat with your resume using a premium, glassmorphic UI. Supports rich Markdown responses (tables, code blocks) and maintains context.
+- **Smart ATS Analysis**: Comprehensive keyword matching (50+ tech terms) and AI-driven feedback comparison against job descriptions.
+- **Rich Summary Generation**: Produces beautiful, structured Markdown summaries with emojis and clear sections (Executive Summary, Skills, Highlights).
 - **Resume Optimization**: Rewrite resume content to better align with a specific job role.
 - **Job Search**: Search for relevant jobs on LinkedIn (requires Chrome/Selenium).
 
@@ -98,8 +110,6 @@ The Frontend will run at `http://localhost:5173` (default Vite port).
 
 - **Swagger UI**: Visit `http://127.0.0.1:8000/docs`.
 - **Detailed Docs**: See [backend/API_DOCUMENTATION.md](backend/API_DOCUMENTATION.md).
-
-
 
 ## To get a understanding of this project See the CLI VERSION OF THIS PROTOTYPE
 

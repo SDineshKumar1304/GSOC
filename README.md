@@ -4,15 +4,29 @@ Resumini is a powerful Resume Intelligence Analysis Application designed to help
 
 ## Application Screenshots
 
-Please place the corresponding screenshots in `frontend/images/`:
+### 1. Dashboard & Executive Summary
 
-|      **Dashboard (Executive Summary)**      |       **ATS Analysis & Feedback**       |
-| :-----------------------------------------: | :-------------------------------------: |
-| ![Dashboard](frontend/images/dashboard.png) | ![ATS Scoring](frontend/images/ats.png) |
+The dashboard provides an instant, AI-generated executive summary of the candidate's profile. It highlights key skills, professional achievements, and education in a structured, easy-to-read format.
 
-|           **RAG Chat Agent**            |            **Resume Upload**             |
-| :-------------------------------------: | :--------------------------------------: |
-| ![Chat Agent](frontend/images/chat.png) | ![Home/Upload](frontend/images/home.png) |
+![Dashboard](frontend/images/dashboard.png)
+
+### 2. Smart ATS Analysis
+
+Get a detailed breakdown of how well the resume matches a specific job role. The system analyzes keywords, structure, and content, providing a match score and actionable AI feedback to improve the resume.
+
+![ATS Scoring](frontend/images/ats.png)
+
+### 3. Interactive RAG Chat Agent
+
+Chat with your resume! The RAG (Retrieval-Augmented Generation) agent allows you to ask deep questions about the candidate's experience. It supports rich Markdown responses, including tables and code blocks, in a premium conversational interface.
+
+![Chat Agent](frontend/images/chat.png)
+
+### 4. Resume Upload & Home
+
+A clean, modern interface for uploading resumes (PDF, DOCX, TXT). The system automatically parses the file and prepares it for analysis.
+
+![Home/Upload](frontend/images/home.png)
 
 ## Tech Stack
 

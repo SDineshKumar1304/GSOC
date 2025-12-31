@@ -18,32 +18,41 @@ import docx
 # =========================================================
 
 SUMMARY_PROMPT = """
-You are Resumini, an intelligent AI Resume Summarization Agent that produces professional single-paragraph summaries suitable for recruiters and hiring systems.
-Do not use markdown, lists, emojis, or decorative symbols.
+You are Resumini, an intelligent AI Resume Summarization Agent that produces beautiful, professional, and easy-to-read summaries.
+Use Markdown formatting, emojis, and clear sections to make the report visually appealing.
 
 Task:
-Analyze the resume below and generate a single, coherent, professional paragraph summarizing the candidate’s overall profile.
+Analyze the resume below and generate a structured summary of the candidate's profile.
 
 Guidelines:
-- Do not use markdown, emojis, or decorative formatting.
-- Detect and include the candidate’s full name if mentioned.
-- Mention total experience duration (if inferable), current or most recent role, and area of expertise.
-- Highlight 4–6 most relevant skills, tools, or technologies naturally within the sentence.
-- Mention educational background or domain focus if applicable.
-- Avoid repetitive or filler words like “hardworking” or “motivated.”
-- Keep tone objective, factual, and recruiter-friendly.
-- Output should be a single paragraph of 100–130 words maximum.
-- Do not use bullet points, numbered lists, or formatting symbols.
-- The summary must read like a natural executive summary written by a hiring analyst.
+- Use **Markdown** for formatting (headers, bold text, bullet points).
+- Use **emojis** to add visual interest (e.g., 👤 for Name, 💼 for Experience, 🛠️ for Skills).
+- Create a concise **Executive Summary** section.
+- List **Key Skills** in a bulleted list or inline code blocks.
+- Mention **Experience** & **Education** clearly.
+- Keep the tone professional but engaging.
 
-Output Format (plain text only):
+Output Format:
 
-==========================
-CANDIDATE SUMMARY REPORT
-==========================
-Candidate Name: <Extracted name or "Name not found">
-Summary:
-<One professional paragraph summarizing the resume content.>
+# 📄 Candidate Summary Report
+
+## 👤 **Candidate Name**: <Name>
+
+### ✨ Executive Summary
+<A cohesive paragraph summarizing the candidate's profile, experience, and value prop.>
+
+### 🛠️ Key Technical Skills
+- **Languages**: <List>
+- **Frameworks**: <List>
+- **Tools**: <List>
+
+### 💼 Professional Highlights
+- <Key achievement or role 1>
+- <Key achievement or role 2>
+
+### 🎓 Education
+- <Degree, Institution>
+
 ==========================
 
 Resume Text:
@@ -238,7 +247,15 @@ def rag_query(question: str, top_k: int = 4) -> dict:
 def ats_report(resume_text: str, role: str) -> dict:
     text = resume_text.lower()
 
-    keywords = ["python", "machine learning", "ai", "sql", "flask", "tensorflow"]
+    keywords = [
+        "python", "java", "c++", "javascript", "typescript", "html", "css", "react", "angular", "vue",
+        "node", "express", "django", "flask", "fastapi", "spring", "springboot", "hibernate",
+        "sql", "mysql", "postgresql", "mongodb", "redis", "elasticsearch", "cassandra",
+        "aws", "azure", "gcp", "docker", "kubernetes", "jenkins", "gitlab", "github actions",
+        "machine learning", "deep learning", "nlp", "computervision", "tensorflow", "pytorch", "scikit-learn",
+        "pandas", "numpy", "matplotlib", "seaborn", "tableau", "powerbi",
+        "git", "linux", "agile", "scrum", "rest api", "graphql", "microservices"
+    ]
     sections = ["education", "skills", "experience", "projects"]
 
     keyword_score = len([k for k in keywords if k in text]) / len(keywords) * 100
